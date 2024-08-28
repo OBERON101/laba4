@@ -23,7 +23,7 @@ public class JsonFileReader extends AbstractFileReader {
             ObjectMapper mapper = new ObjectMapper();
             Source source = new Source(fileName, fileType);
             Map<String, ReactorType> map = mapper.readValue(new File(fileName), new TypeReference<Map<String, ReactorType>>() {
-            });
+            });   // использую TypeReference для чтения(readValue) маппы
             map.keySet().forEach((key) -> {
                 map.get(key).setSource(source);
             });

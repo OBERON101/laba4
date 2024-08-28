@@ -4,7 +4,7 @@ import models.ReactorType;
 
 import java.util.Map;
 
-public abstract class AbstractFileReader {
+public abstract class  AbstractFileReader {
     protected final AbstractFileReader nextFileReader;
     protected final FileTypeEnum accepts;
 

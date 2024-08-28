@@ -25,7 +25,7 @@ public class YamlFileReader extends AbstractFileReader {
         try {
             InputStream inputStream = new FileInputStream(fileName);
             Source source = new Source(fileName, fileType);
-            Yaml yaml = new Yaml(new Constructor(Map.class, new LoaderOptions()));
+            Yaml yaml = new Yaml(new Constructor(Map.class, new LoaderOptions())); // использую Constructor для получения данных
             Map<String, Map<String, Object>> map = yaml.load(inputStream);
             return map.keySet().stream()
                     .map((type)-> ReactorType.buildFromMapAndSource(type, map.get(type), source))

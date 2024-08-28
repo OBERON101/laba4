@@ -82,7 +82,7 @@ public class Application {
     }
 
     private void buildTree(File file) {
-        currentFileType = FileTypeEnum.parseFileType("." + file.getName().split("\\.")[1]);
+        currentFileType = FileTypeEnum.parseFileType("." + file.getName().split("\\.")[1]); // беру первый элемент после точки
         Map<String, ReactorType> map = fileReaderHolder.readReactorTypesFromFile(file.getAbsolutePath(),
                 FileTypeEnum.parseFileType("." + file.getName().split("\\.")[1]));
         fileHistory.put(currentFileType, map);
